@@ -1,4 +1,5 @@
 import fetchLocation from "../services/locService.js";
+import fetchWeather from "../services/weatherService.js";
 
 const weatherRoutes = (app) => {
   app.get("/weather", async (req, res) => {
@@ -7,10 +8,10 @@ const weatherRoutes = (app) => {
     try {
       // fetch coordinates for the location requested
       const coords = await fetchLocation(location);
-      console.log(coords);
-      // TODO: fetch weather for coordinates
+      // fetch weather for coordinates
+      const weatherData = await fetchWeather(coords.lat, coords.lng);
     } catch (error) {
-      console.log(error);
+      res.status(500).json({ error: "Server error." });
     }
     res.send("Request received..");
   });
