@@ -11,7 +11,7 @@ const fetchLocation = async (address) => {
   if (geoRes.data.status === "OK") {
     return geoRes.data.results[0].geometry.location;
   } else if (geoRes.data.status === "ZERO_RESULTS") {
-    throw new Error("Zero results for query.");
+    throw new Error("Zero results for address query.");
   } else if (geoRes.data.status === "INVALID_REQUEST") {
     throw new Error("Invalid query.");
   } else {
