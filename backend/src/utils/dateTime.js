@@ -1,7 +1,7 @@
 const getDayAndTime = (unix) => {
   // convert to milliseconds
   const milSeconds = unix * 1000;
-  const dateObj = new Date(mSeconds);
+  const dateObj = new Date(milSeconds);
   // retrieve time
   const time = dateObj.toLocaleTimeString();
   const day = dateObj.toLocaleDateString("en-US", { weekday: "long" });
