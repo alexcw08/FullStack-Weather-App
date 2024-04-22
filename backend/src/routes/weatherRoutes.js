@@ -13,10 +13,14 @@ const weatherRoutes = (app) => {
         // receives location for weather
         const location = req.query.location;
         try {
-          // fetch coordinates for the location requested
-          const coords = await fetchLocation(location);
+          // fetch coordinates and formatted addr for the location requested
+          const geoRes = await fetchLocation(location);
+          const coords = geoRes[0];
+          const address = geoRes[1];
           // fetch weather for coordinates
           const weatherData = await fetchWeather(coords.lat, coords.lng);
+          // add formatted address to the data
+          weatherData["formatted_address"] = address;
           // send data back to client
           res.send(weatherData);
         } catch (error) {

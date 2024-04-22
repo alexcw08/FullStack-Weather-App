@@ -9,7 +9,11 @@ const fetchLocation = async (address) => {
 
   // check for errors with query
   if (geoRes.data.status === "OK") {
-    return geoRes.data.results[0].geometry.location;
+    // return an array that contains obj with coordinates AND formatted address string
+    return [
+      geoRes.data.results[0].geometry.location,
+      geoRes.data.results[0].formatted_address,
+    ];
   } else if (geoRes.data.status === "ZERO_RESULTS") {
     throw new Error("Zero results for address query.");
   } else if (geoRes.data.status === "INVALID_REQUEST") {
