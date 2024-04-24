@@ -25,6 +25,25 @@ export interface CurrentWeather {
   weather: Weather[];
 }
 
+export interface HourlyWeather {
+  dt: {
+    time: string;
+    day: string;
+  };
+  temp: number;
+  feels_like: number;
+  pressure: number;
+  humidity: number;
+  dew_point: number;
+  uvi: number;
+  clouds: number;
+  visibility: number;
+  wind_speed: number;
+  wind_deg: number;
+  wind_gust: number;
+  weather: Weather[];
+  pop: number;
+}
 export interface DailyWeather {
   dt: {
     time: string;
@@ -61,13 +80,15 @@ export interface DailyWeather {
   uvi: number;
 }
 
-export interface WeatherData {
+interface WeatherData {
   lat: number;
-  long: number;
+  lon: number;
   timezone: string;
   timezone_offset: number;
   current: CurrentWeather;
-  hourly: CurrentWeather[];
+  hourly: HourlyWeather[];
   daily: DailyWeather[];
   address: string[];
 }
+
+export default WeatherData;
