@@ -17,8 +17,6 @@ const weatherRoutes = (app) => {
           const geoRes = await fetchLocation(location);
           const coords = geoRes[0];
           const address = geoRes[1].split(",");
-          // const address = formattedAddress.split(",");
-          // const address = geoRes[1];
           // fetch weather for coordinates
           const weatherData = await fetchWeather(coords.lat, coords.lng);
           // add formatted address to the data

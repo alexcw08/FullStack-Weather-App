@@ -1,6 +1,6 @@
 import getDayAndTime from "./dateTime.js";
 
-const convertAllData = async (data) => {
+const convertTimeStamps = async (data) => {
   // convert current data
   data.current["dt"] = await getDayAndTime(data.current["dt"]);
   // convert hourly data - loop through each hour
@@ -15,13 +15,4 @@ const convertAllData = async (data) => {
   return data;
 };
 
-// TODO: IMPLEMENT THESE WHEN FETCHING SPECIFIC WEATHER INFO IS IMPLEMENTED
-const convertCurrentData = (data) => {
-  return data;
-};
-
-const convertHourlyData = (data) => {};
-
-const convertWeeklyData = (data) => {};
-
-export default convertAllData;
+export default convertTimeStamps;
