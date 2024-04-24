@@ -1,15 +1,28 @@
-import axios from "axios";
+import { ChangeEvent, FormEvent, useState } from "react";
+import fetchWeatherData from "../services/api";
+import WeatherData from "../types/weatherTypes";
 
-export default function HourlyDaily({ location, setLocation }) {
-  const handleSubmit = async (e) => {
+interface ChildProps {
+  setWeatherData: React.Dispatch<React.SetStateAction<WeatherData>>;
+}
+
+const HourlyDaily: React.FC<ChildProps> = ({ setWeatherData }) => {
+  const [userInput, setUserInput] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await axios.get(
-      `http://localhost:3001/weather?location=${location}`
-    );
-    console.log(res);
+    try {
+      const weatherData = await fetchWeatherData(userInput);
+      setWeatherData(weatherData);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setUserInput("");
+    }
   };
-  const handleChange = (e) => {
-    setLocation(e.target.value);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUserInput(e.target.value);
   };
 
   return (
@@ -21,10 +34,11 @@ export default function HourlyDaily({ location, setLocation }) {
         >
           <input
             name="location"
-            value={location}
+            value={userInput}
             onChange={handleChange}
             className="placeholder-[#494949] text-[#1F3753]"
-            placeholder="Search for location"
+            placeholder="Search city"
+            required
           />
           <button type="submit">
             <svg
@@ -44,4 +58,5 @@ export default function HourlyDaily({ location, setLocation }) {
       </form>
     </div>
   );
-}
+};
+export default HourlyDaily;
