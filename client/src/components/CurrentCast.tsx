@@ -8,7 +8,6 @@ interface ChildProps {
 }
 
 // TO DO
-// 2. work on backend. need to convert timestamps for sunset and sunrise
 // 3. backend implement caching
 // 4. redo currentCast ui to use daisyUi
 // 5. finish hourly and daily Ui
