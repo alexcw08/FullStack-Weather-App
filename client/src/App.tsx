@@ -9,7 +9,7 @@ function App() {
   const [weatherData, setWeatherData] = useState<WeatherData>(defaultWeather);
 
   return (
-    <div className="bg-[#D1D8DC] flex h-dvh w-full}">
+    <div className="bg-[#D1D8DC] flex h-screen w-full ">
       <CurrentCast weatherData={weatherData} />
       <HourlyDaily weatherData={weatherData} setWeatherData={setWeatherData} />
     </div>

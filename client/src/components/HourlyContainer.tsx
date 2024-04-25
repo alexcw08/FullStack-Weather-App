@@ -7,12 +7,11 @@ interface ChildProps {
 
 const HourlyContainer: React.FC<ChildProps> = ({ weatherData }) => {
   const firstHalf = weatherData.hourly.slice(0, 12);
-  const secondHalf = weatherData.hourly.slice(12);
-  console.log(secondHalf);
+  // const secondHalf = weatherData.hourly.slice(12);
   return (
     <div className="py-10 flex flex-col ">
-      <h1 className="text-3xl text-slate-800 mb-8">Hourly Forecast</h1>
-      <div className="grid grid-cols-6 grid-rows-2 gap-4">
+      <h1 className="text-3xl text-slate-800 mb-8">12 Hour Forecast</h1>
+      <div className="grid grid-cols-6 grid-rows-2 gap-x-6 gap-y-10">
         {/* {weatherData.hourly.map((hour) => (
           <HourlyCard hour={hour} />
         ))} */}

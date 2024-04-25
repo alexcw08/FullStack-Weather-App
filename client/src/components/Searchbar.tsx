@@ -26,16 +26,16 @@ const Searchbar: React.FC<ChildProps> = ({ setWeatherData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="md:w-1/2 mx-auto">
+    <form onSubmit={handleSubmit} className="md:w-1/2 mx-auto ">
       <label
         htmlFor="location"
-        className="input input-bordered  flex items-center justify-between  bg-[#BFC5C9] "
+        className="input input-bordered flex items-center justify-between focus:border-blue-500 bg-[#BFC5C9] "
       >
         <input
           name="location"
           value={userInput}
           onChange={handleChange}
-          className="placeholder-[#494949] text-[#1F3753]"
+          className="placeholder-[#494949] w-full text-[#1F3753] border-pink-500"
           placeholder="Search city"
           required
         />

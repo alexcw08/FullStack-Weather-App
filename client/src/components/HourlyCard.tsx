@@ -23,10 +23,10 @@ const HourlyCard: React.FC<ChildProps> = ({ hour }) => {
   const weatherDescription = hour.weather[0].main;
   const IconComponent = icons[weatherDescription];
   return (
-    <div className="card card-bordered  items-center shadow-md text-slate-600 ">
+    <div className="card  items-center text-zinc-700 shadow-md bg-zinc-400/10 ">
       <div className="card-body  w-[80%] px-0 items-center">
         <h2 className="card-title block text-center text-md">{hour.dt.time}</h2>
-        {IconComponent && <IconComponent fontSize={"50px"} />}
+        {IconComponent && <IconComponent fontSize={"50px"} color="#005569" />}
         <h2 className="card-title block text-center text-2xl">
           {hour.temp.toFixed(0)}°
         </h2>

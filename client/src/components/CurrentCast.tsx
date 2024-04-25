@@ -23,7 +23,7 @@ const CurrentCast: React.FC<ChildProps> = ({ weatherData }) => {
   const weatherDescription = weatherData.current.weather[0].main;
   const IconComponent = icons[weatherDescription];
   return (
-    <div className="w-[30%] from-[#1F3753] to-[#17397E] bg-gradient-to-b justify-between flex  flex-col text-[#EEFEFF] md:px-14 py-14">
+    <div className="w-[30%] h-full from-[#1F3753] to-[#17397E] bg-gradient-to-b justify-between flex  flex-col text-[#EEFEFF] md:px-14 py-14 overflow-y-scroll">
       {/* city name and tempt */}
       <div className="flex justify-between">
         <div>
