@@ -2,7 +2,6 @@ import WeatherData from "../types/weatherTypes";
 import DailyContainer from "./DailyContainer";
 import Header from "./Header";
 import HourlyContainer from "./HourlyContainer";
-import Searchbar from "./Searchbar";
 
 interface ChildProps {
   weatherData: WeatherData;
