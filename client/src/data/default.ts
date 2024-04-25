@@ -8,8 +8,14 @@ const defaultWeather = {
       time: "4:24:13 PM",
       day: "Tuesday",
     },
-    sunrise: 1713865800,
-    sunset: 1713915277,
+    sunrise: {
+      time: "6:00 AM",
+      day: "Monday",
+    },
+    sunset: {
+      time: "6:00 AM",
+      day: "Monday",
+    },
     temp: 60.84,
     feels_like: 58.23,
     pressure: 1016,
