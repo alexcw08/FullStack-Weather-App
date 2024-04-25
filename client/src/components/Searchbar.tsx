@@ -29,7 +29,7 @@ const Searchbar: React.FC<ChildProps> = ({ setWeatherData }) => {
     <form onSubmit={handleSubmit} className="md:w-1/2 mx-auto ">
       <label
         htmlFor="location"
-        className="input input-bordered flex items-center justify-between focus:border-blue-500 bg-[#BFC5C9] "
+        className="input input-bordered flex items-center justify-between focus:border-blue-500 bg-[#D1D8DC] "
       >
         <input
           name="location"
