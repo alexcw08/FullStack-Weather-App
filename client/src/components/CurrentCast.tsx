@@ -53,12 +53,12 @@ const CurrentCast: React.FC<ChildProps> = ({ weatherData }) => {
         <div className="rounded-md bg-[#2D4D86] flex  py-8 justify-evenly">
           <FiSunrise fontSize={"30px"} />
           <p>Sunrise</p>
-          <p>5:48 AM</p>
+          <p>{weatherData.current.sunrise.time}</p>
         </div>
         <div className="rounded-md bg-[#2D4D86] flex  py-8 justify-evenly">
           <FiSunset fontSize={"30px"} />
           <p>Sunset</p>
-          <p>7:34 PM</p>
+          <p>{weatherData.current.sunset.time}</p>
         </div>
       </div>
     </div>

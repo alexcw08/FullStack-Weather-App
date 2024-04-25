@@ -10,8 +10,14 @@ export interface CurrentWeather {
     time: string;
     day: string;
   };
-  sunrise: number;
-  sunset: number;
+  sunrise: {
+    time: string;
+    day: string;
+  };
+  sunset: {
+    time: string;
+    day: string;
+  };
   temp: number;
   feels_like: number;
   pressure: number;
