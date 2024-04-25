@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="bg-[#D1D8DC] flex h-dvh w-full}">
       <CurrentCast weatherData={weatherData} />
-      <HourlyDaily setWeatherData={setWeatherData} />
+      <HourlyDaily weatherData={weatherData} setWeatherData={setWeatherData} />
     </div>
   );
 }
