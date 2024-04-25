@@ -3,7 +3,10 @@ const getDayAndTime = (unix) => {
   const milSeconds = unix * 1000;
   const dateObj = new Date(milSeconds);
   // retrieve time
-  const time = dateObj.toLocaleTimeString();
+  const time = dateObj.toLocaleTimeString([], {
+    hour: "numeric",
+    minute: "numeric",
+  });
   const day = dateObj.toLocaleDateString("en-US", { weekday: "long" });
   // return obj w time & day
   return {
