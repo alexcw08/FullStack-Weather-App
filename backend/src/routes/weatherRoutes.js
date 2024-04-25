@@ -2,6 +2,7 @@ import fetchLocation from "../services/locService.js";
 import fetchWeather from "../services/weatherService.js";
 import { query, validationResult } from "express-validator";
 import cache from "memory-cache";
+
 const weatherRoutes = (app) => {
   app.get(
     "/weather",
