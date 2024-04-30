@@ -1,5 +1,5 @@
 import WeatherData from "../types/weatherTypes";
-import { selectIcon } from "../assets/utils/iconSelector";
+import { selectIcon } from "../utils/iconSelector";
 
 interface ChildProps {
   weatherData: WeatherData;

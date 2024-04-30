@@ -1,4 +1,4 @@
-import { selectIcon } from "../assets/utils/iconSelector";
+import { selectIcon } from "../utils/iconSelector";
 import { DailyWeather } from "../types/weatherTypes";
 
 interface ChildProps {
