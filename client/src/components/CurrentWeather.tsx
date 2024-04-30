@@ -19,11 +19,11 @@ const icons: { [key: string]: IconType } = {
   ["Clouds"]: FaCloud,
 };
 
-const CurrentCast: React.FC<ChildProps> = ({ weatherData }) => {
+const CurrentWeather: React.FC<ChildProps> = ({ weatherData }) => {
   const weatherDescription = weatherData.current.weather[0].main;
   const IconComponent = icons[weatherDescription];
   return (
-    <div className="w-[30%] h-full from-[#1F3753] to-[#17397E] bg-gradient-to-b justify-between flex  flex-col text-[#EEFEFF] md:px-14 py-14 overflow-y-scroll">
+    <div className="w-[30%] h-full from-[#1F3753] to-[#17397E] bg-gradient-to-b justify-between flex  flex-col text-[#EEFEFF] md:px-14 py-14 overflow-y-hidden">
       {/* city name and tempt */}
       <div className="flex justify-between">
         <div>
@@ -75,4 +75,4 @@ const CurrentCast: React.FC<ChildProps> = ({ weatherData }) => {
   );
 };
 
-export default CurrentCast;
+export default CurrentWeather;

@@ -8,7 +8,7 @@ interface ChildProps {
   setWeatherData: React.Dispatch<React.SetStateAction<WeatherData>>;
 }
 
-const HourlyDaily: React.FC<ChildProps> = ({ weatherData, setWeatherData }) => {
+const RightPanel: React.FC<ChildProps> = ({ weatherData, setWeatherData }) => {
   return (
     <div className="w-[70%] overflow-y-scroll">
       <Header setWeatherData={setWeatherData} />
@@ -19,4 +19,4 @@ const HourlyDaily: React.FC<ChildProps> = ({ weatherData, setWeatherData }) => {
     </div>
   );
 };
-export default HourlyDaily;
+export default RightPanel;
