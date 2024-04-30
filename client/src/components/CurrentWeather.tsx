@@ -17,11 +17,12 @@ const icons: { [key: string]: IconType } = {
   ["Snow"]: IoSnowOutline,
   ["Sunny"]: FaSun,
   ["Clouds"]: FaCloud,
+  ["Mist"]: FaCloud,
 };
 
 const CurrentWeather: React.FC<ChildProps> = ({ weatherData }) => {
   const weatherDescription = weatherData.current.weather[0].main;
-  const IconComponent = icons[weatherDescription];
+  const IconComponent = icons[weatherDescription] || FaCloud;
   return (
     <div className="w-[30%] h-full from-[#1F3753] to-[#17397E] bg-gradient-to-b justify-between flex  flex-col text-[#EEFEFF] md:px-14 py-14 overflow-y-hidden">
       {/* city name and tempt */}
