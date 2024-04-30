@@ -1,28 +1,15 @@
 import { FiSunrise } from "react-icons/fi";
 import { FiSunset } from "react-icons/fi";
-import { FaCloudRain } from "react-icons/fa";
-import { FaCloud } from "react-icons/fa";
-import { IoSnowOutline } from "react-icons/io5";
-import { FaSun } from "react-icons/fa";
 import WeatherData from "../types/weatherTypes";
-import { IconType } from "react-icons";
+import { selectIcon } from "../assets/utils/iconSelector";
+
 interface ChildProps {
   weatherData: WeatherData;
 }
 
-const icons: { [key: string]: IconType } = {
-  ["Clear"]: FaCloud,
-  ["Rain"]: FaCloudRain,
-  ["Drizzle"]: FaCloudRain,
-  ["Snow"]: IoSnowOutline,
-  ["Sunny"]: FaSun,
-  ["Clouds"]: FaCloud,
-  ["Mist"]: FaCloud,
-};
-
 const CurrentWeather: React.FC<ChildProps> = ({ weatherData }) => {
   const weatherDescription = weatherData.current.weather[0].main;
-  const IconComponent = icons[weatherDescription] || FaCloud;
+  const iconPath = selectIcon(weatherDescription);
   return (
     <div className="w-[30%] h-full from-[#1F3753] to-[#17397E] bg-gradient-to-b justify-between flex  flex-col text-[#EEFEFF] md:px-14 py-14 overflow-y-hidden">
       {/* city name and tempt */}
@@ -35,8 +22,9 @@ const CurrentWeather: React.FC<ChildProps> = ({ weatherData }) => {
       </div>
       {/* icon and description */}
       <div className="flex flex-col items-center gap-y-4">
-        {/* <FaCloudRain fontSize={"100px"} /> */}
-        {IconComponent && <IconComponent fontSize={"100px"} />}
+        <div className="">
+          <img src={iconPath} alt="Icon" />
+        </div>
         <p className="md:text-2xl">{weatherData.current.weather[0].main}</p>
       </div>
       {/* details */}
