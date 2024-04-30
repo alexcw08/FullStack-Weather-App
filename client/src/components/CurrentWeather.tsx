@@ -31,7 +31,7 @@ const CurrentWeather: React.FC<ChildProps> = ({ weatherData }) => {
           <h1 className="md:text-3xl">{weatherData.address[0]}</h1>
           <h1 className="md:text-2xl">{weatherData.address[1]}</h1>
         </div>
-        <h1 className="md:text-3xl">{weatherData.current.temp.toFixed(0)}°</h1>
+        <h1 className="md:text-4xl">{weatherData.current.temp.toFixed(0)}°</h1>
       </div>
       {/* icon and description */}
       <div className="flex flex-col items-center gap-y-4">
