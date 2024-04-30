@@ -1,5 +1,3 @@
-import { FiSunrise } from "react-icons/fi";
-import { FiSunset } from "react-icons/fi";
 import WeatherData from "../types/weatherTypes";
 import { selectIcon } from "../assets/utils/iconSelector";
 
@@ -48,14 +46,20 @@ const CurrentWeather: React.FC<ChildProps> = ({ weatherData }) => {
       </div>
       {/* sunrise and sunset */}
       <div className="flex flex-col gap-y-5">
-        <div className="rounded-md bg-[#2D4D86] flex  py-8 justify-evenly">
-          <FiSunrise fontSize={"30px"} />
+        <div className="rounded-md bg-[#2D4D86] flex py-4 justify-evenly">
+          {/* <FiSunrise fontSize={"30px"} /> */}
+          <div className="w-8 h-8">
+            <img src="/sunrise.png" alt="" />
+          </div>
           <p>Sunrise</p>
           <p>{weatherData.current.sunrise.time}</p>
         </div>
 
-        <div className="rounded-md bg-[#2D4D86] flex  py-8 justify-evenly">
-          <FiSunset fontSize={"30px"} />
+        <div className="rounded-md bg-[#2D4D86] flex py-4 justify-evenly">
+          {/* <FiSunset fontSize={"30px"} /> */}
+          <div className="w-8 h-8">
+            <img src="/sunset.png" alt="" />
+          </div>
           <p>Sunset</p>
           <p>{weatherData.current.sunset.time}</p>
         </div>

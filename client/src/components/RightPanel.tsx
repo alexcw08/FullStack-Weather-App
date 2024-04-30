@@ -12,7 +12,7 @@ const RightPanel: React.FC<ChildProps> = ({ weatherData, setWeatherData }) => {
   return (
     <div className="w-[70%] overflow-y-scroll bg-slate-200">
       <Header setWeatherData={setWeatherData} />
-      <div className="md:px-16 flex flex-col py-12 ">
+      <div className="md:px-10 flex flex-col ">
         <HourlyContainer weatherData={weatherData} />
         <DailyContainer weatherData={weatherData} />
       </div>
